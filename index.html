@@ -2,12 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anduin Brokerage</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Background Canvas -->
   <canvas id="lattice-canvas"></canvas>
+
+  <!-- Main Content -->
+  <div class="overlay">
+    <div class="hero">
+      <!-- Logo Placeholder -->
+      <div class="logo">
+        <img src="LOGOANDUIN.svg" alt="Anduin Logo"/>
+      </div>
+
+      <!-- Hero Copy -->
+      <h1>Anduin Brokerage</h1>
+      <p class="subhead">Your bridge to Latin American production — from sourcing to delivery, guided by experts.</p>
+      <div class="cta-wrapper">
+        <a href="mailto:partnerships@anduinbrokerage.com" class="cta-button">Get in Touch</a>
+        <div class="cta-email">partnerships@anduinbrokerage.com</div>
+      </div>
+      
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator-container">
+        <a href="#about" id="scroll-indicator" class="scroll-indicator">
+        <div class="arrow-circle">
+            <span class="arrow"></span>
+        </div>
+        </a>
+    </div>
+    
+      
+      
+    </div>
+  </div>
+  <!-- Parallax Banner -->
+    <div class="banner-container">
+        <div class="banner-image" style="background-image: url('devs.png');"></div>
+    </div>
+
+  <!-- Body Content Section -->
+  <div id="about" class="body-section">
+    <h3>Finding reliable, high-quality sourcing for your products abroad can be challenging. </h3>
+    <h4> We are here to facilitate the process and ensure smooth production. </h4>
+
+    <div class="body-content" style="justify-content: baseline;">
+      <p>
+        We put our portfolio of partners across Latin America and the Caribbean at your disposal for your project, as well as our personnel on site to guarantee everything’s done as per your specifications.
+      </p>
+      <p>
+        Anduin Brokerage’s highly experienced team covers a range of expertise including engineering, manufacturing, design, finances, and imports-exports. We are here to guide you and provide support every step of the way!
+      </p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+
+  <script>
+    const scrollLink = document.getElementById('scroll-indicator');
+    const arrow = scrollLink.querySelector('.arrow');
+  
+    window.addEventListener('scroll', () => {
+      const heroHeight = document.querySelector('.overlay').offsetHeight;
+      if (window.scrollY > heroHeight * 0.5) {
+        // We're in the body section
+        scrollLink.setAttribute('href', '#');
+        arrow.classList.add('up');
+      } else {
+        // We're in the hero section
+        scrollLink.setAttribute('href', '#about');
+        arrow.classList.remove('up');
+      }
+    });
+  </script>
+  
+
 </body>
+
+<div class="offices">
+    <div class="office-button left">
+      <h3>🇺🇸 Miami, Florida</h3>
+      <p>United States HQ</p>
+    </div>
+    <div class="office-button right">
+      <h3>🇦🇷 Buenos Aires</h3>
+      <p>Argentina Regional Office</p>
+    </div>
+  </div>
+  
 </html>
+
